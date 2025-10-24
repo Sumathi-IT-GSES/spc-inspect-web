@@ -2,6 +2,7 @@ package com.spc.pro_v9.service;
 
 import com.spc.pro_v9.entity.User;
 import com.spc.pro_v9.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,8 +23,11 @@ public class UserService {
 //    public List<User> getAllUsers(){
 //        return userRepository.findAll();
 //    }
+//
+//    private final UserRepository userRepository = new UserRepository();
 
-    private final UserRepository userRepository = new UserRepository();
+    @Autowired
+    private UserRepository userRepository;
 
     public boolean validateUser(String username, String password) {
         System.out.println("Pass values to userRepository from service--------");

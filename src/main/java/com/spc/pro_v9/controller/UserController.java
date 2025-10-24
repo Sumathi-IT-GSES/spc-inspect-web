@@ -25,23 +25,6 @@ public class UserController {
         return "index";
     }
 
-//    @PostMapping("/addUser")
-//    public String addUser(@ModelAttribute User user){
-//        userService.addUser(user);
-//        return "redirect:/users";
-//    }
-//
-//    @GetMapping("/users")
-//    public String viewUsers(Model model){
-//        model.addAttribute("users", userService.getAllUsers());
-//        return "users";
-//    }
-
-//    @GetMapping("/")
-//    public String showLoginPage() {
-//        return "index"; // index.html
-//    }
-
     // Handle form submission
     @PostMapping("/login")
     public String login(@RequestParam("username") String username,
