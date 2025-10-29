@@ -10,27 +10,11 @@ import java.util.List;
 @Service
 public class UserService {
 
-//    private final UserRepository userRepository;
-//
-//    public UserService(UserRepository userRepository) {
-//        this.userRepository = userRepository;
-//    }
-//
-//    public void addUser(User user){
-//        userRepository.save(user);
-//    }
-//
-//    public List<User> getAllUsers(){
-//        return userRepository.findAll();
-//    }
-//
-//    private final UserRepository userRepository = new UserRepository();
 
     @Autowired
     private UserRepository userRepository;
 
     public boolean validateUser(String username, String password) {
-        System.out.println("Pass values to userRepository from service--------");
         User user = userRepository.findByUsernameAndPassword(username, password);
         return user != null;
     }
